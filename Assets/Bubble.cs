@@ -6,22 +6,23 @@ public class Example : MonoBehaviour
 {
     [SerializeField] Rigidbody2D[] bubble_bones;
     [SerializeField] GameObject bubble;
-    [SerializeField] float scaleChange = 0.01f;
+    [SerializeField] float maxScale = 0.3f;     // Max size for the bubble, original scale 0.13f
+    [SerializeField] float scaleChange = 0.01f; // Amount to increase per update
 
-    private Joint[] joints;
-    private Vector2[][] _connectedAnchor;
-    private Vector2[][] _anchor;
-    private float newScale;
+    private Joint[] _joints;
+    private readonly Vector2[][] _connectedAnchor;
+    private readonly Vector2[][] _anchor;
 
     private void Start()
     {
+        // Get and store connectedAnchors and anchors
         for (int i = 0; i < bubble_bones.Length; i++)
         {
-            joints = bubble_bones[i].GetComponents<Joint>();
-            for (int j = 0; j < joints.Length; j++)
+            _joints = bubble_bones[i].GetComponents<Joint>();
+            for (int j = 0; j < _joints.Length; j++)
             {
-                _connectedAnchor[i][j] = joints[j].connectedAnchor;
-                _anchor[i][j] = joints[j].anchor;
+                _connectedAnchor[i][j] = _joints[j].connectedAnchor;
+                _anchor[i][j] = _joints[j].anchor;
             }
         }
 
@@ -31,42 +32,36 @@ public class Example : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            newScale += scaleChange;
-
-            for (int i = 0; i < bubble_bones.Length; i++)
-            {
-                // Force
-                bubble_bones[i].AddForce(1.5f * Vector2.up);
-            }
+            IncreaseBubbleSize();
+            AddUpwardsForceToJoints();
         }
-        else
-        {
-            newScale -= scaleChange * 0.5f;
-            newScale = Mathf.Max(0.13f, newScale);
-
-            for (int i = 0; i < bubble_bones.Length; i++)
-            {
-                //bubble_bones[i].velocity = new Vector2(0, 0);
-            }
-        }
-
-        bubble.transform.localScale = new Vector2(newScale, newScale);
 
         for (int i = 0; i < bubble_bones.Length; i++)
         {
-            // Scale the bone
-            //bubble_bones[i].transform.localScale = new Vector2(newScale, newScale);
-
             // Reset the joints
-            joints = bubble_bones[i].GetComponents<Joint>();
+            _joints = bubble_bones[i].GetComponents<Joint>();
 
-            for (int j = 0; j < joints.Length; j++)
+            for (int j = 0; j < _joints.Length; j++)
             {
-                joints[j].connectedAnchor = _connectedAnchor[i][j];
-                joints[j].anchor = _anchor[i][j];
+                _joints[j].connectedAnchor = _connectedAnchor[i][j];
+                _joints[j].anchor = _anchor[i][j];
             }
         }
+    }
 
-        //bubble.GetComponent<Rigidbody2D>().AddForce(0.8f * Vector2.up);
+    void IncreaseBubbleSize() {
+        Vector3 newScale = bubble.transform.localScale + new Vector3(scaleChange, scaleChange, scaleChange);
+
+        if (newScale.x < maxScale) {
+            bubble.transform.localScale = newScale;
+        }
+    }
+
+    void AddUpwardsForceToJoints() {
+        if(bubble.transform.localScale.x < maxScale) {
+            for (int i = 0; i < bubble_bones.Length; i++) {
+                bubble_bones[i].AddForce(1.5f * Vector2.up);
+            }
+        }
     }
 }
