@@ -6,7 +6,6 @@ public class BubbleCollision : MonoBehaviour
 {
     [SerializeField] GameObject bubble;
     [SerializeField] GameObject pop;
-    [SerializeField] float scaleChange = 0.01f; // Amount to increase per update
 
     GameObject popAnimation;
 

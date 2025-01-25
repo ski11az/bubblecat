@@ -18,6 +18,11 @@ public class CalculateDistance : MonoBehaviour
     }
 
     public float GetDistance() { // Returns distance as a value between 0-1
-        return Vector3.Distance(point1_gameobject.transform.position, point2_gameobject.transform.position) / baseDistance;
+        if (point1_gameobject && point2_gameobject)
+        {
+            return Vector3.Distance(point1_gameobject.transform.position, point2_gameobject.transform.position) / baseDistance;
+        }
+
+        else return -1;
     }
 }
