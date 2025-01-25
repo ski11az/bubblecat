@@ -36,6 +36,7 @@ public class Bubble : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKey(KeyCode.Space))
         {
             IncreaseBubbleSize();
