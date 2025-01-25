@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1282068492429440996}
   - component: {fileID: 3101634698801365529}
   - component: {fileID: 1896485534919366961}
-  - component: {fileID: 8976580054717938893}
+  - component: {fileID: 9123198835387041638}
   m_Layer: 9
-  m_Name: Monster
-  m_TagString: Monster
+  m_Name: Rotator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -78,7 +78,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 2}
+  m_Size: {x: 10, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &1896485534919366961
 Rigidbody2D:
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8976580054717938893
+--- !u!114 &9123198835387041638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,34 +116,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622993229008660127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec52af7822fd3e42a41a8606c206de8, type: 3}
+  m_Script: {fileID: 11500000, guid: 88cc31a6a8eca9949af3bace5e070df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed:
+  rotationSpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 20
       inSlope: 0
       outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 20
       inSlope: 0
       outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  targetDirection: {x: 0, y: 1}
 --- !u!1 &8645293443162282344
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +170,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 2, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1282068492429440996}
