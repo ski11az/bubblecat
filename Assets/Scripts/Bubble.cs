@@ -73,10 +73,11 @@ public class Bubble : MonoBehaviour
         if (newScale.x < maxScale)
         {
             SetBubbleScale(newScale);
+            coreBone.GetComponent<CircleCollider2D>().radius += Time.deltaTime * scaleChange;
         }
     }
 
-    private void SetBubbleScale(Vector3 newScale)
+    public void SetBubbleScale(Vector3 newScale)
     {
         float scaleFactor = newScale.x / bubble.transform.localScale.x;
         Vector3 offset = pivot.position - bubble.transform.position;
