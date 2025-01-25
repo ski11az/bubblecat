@@ -17,4 +17,9 @@ public class PlayerTransformFollow : MonoBehaviour
     {
         player.position = target.position;
     }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
 }
