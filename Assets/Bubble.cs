@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Example : MonoBehaviour
+public class Bubble : MonoBehaviour
 {
     [SerializeField] Rigidbody2D[] bubble_bones;
     [SerializeField] GameObject bubble;
     [SerializeField] float maxScale = 0.3f;     // Max size for the bubble, original scale 0.13f
     [SerializeField] float scaleChange = 0.01f; // Amount to increase per update
+    [SerializeField] float riseStrength = 1.5f;
 
     private Joint[] _joints;
     private readonly Vector2[][] _connectedAnchor;
@@ -28,12 +29,11 @@ public class Example : MonoBehaviour
 
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             IncreaseBubbleSize();
-            AddUpwardsForceToJoints();
         }
 
         for (int i = 0; i < bubble_bones.Length; i++)
@@ -49,8 +49,17 @@ public class Example : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            AddUpwardsForceToJoints();
+        }
+
+    }
+
     void IncreaseBubbleSize() {
-        Vector3 newScale = bubble.transform.localScale + new Vector3(scaleChange, scaleChange, scaleChange);
+        Vector3 newScale = bubble.transform.localScale + Time.deltaTime * new Vector3(scaleChange, scaleChange, scaleChange);
 
         if (newScale.x < maxScale) {
             bubble.transform.localScale = newScale;
@@ -60,7 +69,7 @@ public class Example : MonoBehaviour
     void AddUpwardsForceToJoints() {
         if(bubble.transform.localScale.x < maxScale) {
             for (int i = 0; i < bubble_bones.Length; i++) {
-                bubble_bones[i].AddForce(1.5f * Vector2.up);
+                bubble_bones[i].AddForce(riseStrength * Vector2.up);
             }
         }
     }
