@@ -85,7 +85,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1120535537453207664}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -259,7 +259,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1523917552168966867}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -631,7 +631,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3089168404052734084}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -805,7 +805,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3189905524389159210}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -979,7 +979,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3852601275028450590}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1153,7 +1153,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 4085469792662706059}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1327,7 +1327,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 4342114426732255878}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1691,7 +1691,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5136182920885102373}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1897,7 +1897,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5999637574471730404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2071,7 +2071,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7292199717239674449}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2304,7 +2304,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7521223236690831995}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2478,7 +2478,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7615814998259985550}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2652,7 +2652,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 8305097857406819184}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2826,7 +2826,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 8411865873733938104}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3011,7 +3011,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.46, y: 0}
   serializedVersion: 2
-  m_Radius: 2.79
+  m_Radius: 2.48
 --- !u!114 &7006866428236384105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3114,7 +3114,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 9046690661301150630}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3288,7 +3288,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 9208017831528584298}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c839fdd4810a4a49abce5d078a309d5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
