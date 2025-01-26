@@ -7,6 +7,7 @@ public class PlayAgainButton : MonoBehaviour
 {
     [SerializeField] float scale = 0.15f;
     [SerializeField] TMP_Text stopwatchText;
+    public Canvas targetCanvas;  // Assign the UI Canvas in the Inspector
 
     private Button _btn;
     private Vector3 _originalScale;
@@ -24,6 +25,15 @@ public class PlayAgainButton : MonoBehaviour
     void ReloadGameOnClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       
+        if (targetCanvas != null && targetCanvas.enabled)
+        {
+            targetCanvas.enabled = false;
+        }
+        else if (targetCanvas == null)
+        {
+            Debug.LogWarning("No canvas assigned to CloseCanvasOnSpace script!");
+        }
     }
 
     public void OnPointerEnter()
