@@ -23,16 +23,6 @@ public class HowToPlayText : MonoBehaviour
             StartCoroutine(FadeTextToZeroAlpha(textFadeOutSeconds, text));
         }
     }
-
-    // Bara för debug purposes
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Hej!");
-            ShowText();
-        }
-    }
     
     public IEnumerator FadeTextToZeroAlpha(float time, TMP_Text text)
     {
