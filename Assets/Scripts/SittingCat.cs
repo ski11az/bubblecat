@@ -8,6 +8,11 @@ public class SittingCat : MonoBehaviour
     [SerializeField] GameObject dangleCat;
     [SerializeField] CinemachineVirtualCamera cinemachine;
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -19,8 +24,7 @@ public class SittingCat : MonoBehaviour
     private void OnEnable()
     {
         cinemachine.Follow = transform;
-        int random = Random.Range(0, AudioManager.Instance.meowShort.Length);
-        AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.meowShort[random], 1);
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CalculateDistance>().SetTarget(2, this.gameObject);
     }
 
     private void OnDisable()
