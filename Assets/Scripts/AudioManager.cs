@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] pop;
     public AudioClip[] squeak;
     public AudioClip[] horror;
+    public AudioClip winSource;
 
     public Animator animator;
     // Start is called before the first frame update

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CloseCanvas : MonoBehaviour
 {
+    [SerializeField] GameStopwatch timer;
     public Canvas targetCanvas;  // Assign the UI Canvas in the Inspector
     public MoveInDirection moveInDirection;
     void Update()
@@ -14,6 +15,7 @@ public class CloseCanvas : MonoBehaviour
             AudioManager.Instance.musicSource.Play();
             AudioManager.Instance.monsterSource.Play();
             AudioManager.Instance.animator.enabled = true;
+            timer.StartStopwatch();
         }
     }
 

@@ -25,10 +25,11 @@ public class CalculateDistance : MonoBehaviour
         if (point1_gameobject && point2_gameobject)
         {
             _distance = GetDistance();
-            Debug.Log(_distance);
+            //Debug.Log(_distance);
         }
 
-        AudioManager.Instance.monsterSource.volume = (1 - _distance) - 0.5f;
+        double _distanceLog = System.Math.Log(1 + _distance, 2);
+        AudioManager.Instance.monsterSource.volume = (1 - (float)_distanceLog) - 0.4f;
     }
 
     public float GetDistance() { // Returns distance as a value between 0-1

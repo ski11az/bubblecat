@@ -17,9 +17,9 @@ public class HowToPlayText : MonoBehaviour
 
     public void ShowText()
     {
-        howToPlay.SetActive(true);
         foreach(TMP_Text text in _texts)
         {
+            howToPlay.SetActive(true);
             StartCoroutine(FadeTextToZeroAlpha(textFadeOutSeconds, text));
         }
     }
