@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   howToPlay: {fileID: 7827734037921319022}
-  textFadeOutSeconds: 2
+  textFadeOutSeconds: 5
 --- !u!1 &4492394657358239038
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 101, y: -90}
+  m_AnchoredPosition: {x: 113.3, y: -81.7}
   m_SizeDelta: {x: 120, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &118543472582695174
@@ -285,8 +285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 107, y: -136}
-  m_SizeDelta: {x: 200, y: 40}
+  m_AnchoredPosition: {x: 131, y: -155.2}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5926459021845911217
 CanvasRenderer:
@@ -316,12 +316,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Space: Blow bubble
+  m_text: 'SPACE
 
-    A&D/Left&Right arrow key: Horizontal control'
+    Blow bubble
+
+
+    A&D / LEFT&RIGHT KEY
+
+    Horizontal movement'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: beb6c51471387544c9b6d5bdefd5a25f, type: 2}
-  m_sharedMaterial: {fileID: 1628255814146188307, guid: beb6c51471387544c9b6d5bdefd5a25f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 85e39f7768d8d294782ca541a3a89ad4, type: 2}
+  m_sharedMaterial: {fileID: 6289988806508355221, guid: 85e39f7768d8d294782ca541a3a89ad4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -421,6 +426,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 155.6, y: 34.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
