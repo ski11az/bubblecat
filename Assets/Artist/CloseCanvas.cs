@@ -5,13 +5,15 @@ using UnityEngine;
 public class CloseCanvas : MonoBehaviour
 {
     public Canvas targetCanvas;  // Assign the UI Canvas in the Inspector
-
+    public MoveInDirection moveInDirection;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && targetCanvas.enabled)
         {
             HideCanvas();
-
+            AudioManager.Instance.musicSource.Play();
+            AudioManager.Instance.monsterSource.Play();
+            AudioManager.Instance.animator.enabled = true;
         }
     }
 

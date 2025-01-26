@@ -78,7 +78,7 @@ public class TextPopAnimation : MonoBehaviour
                 if (applyDistortion)
                     StartCoroutine(ApplyTextDistortion(textElement));
             });
-        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.horror[0], 1);
+        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.horror[0], 0.5f);
         yield return new WaitForSeconds(fadeDuration);
     }
 
