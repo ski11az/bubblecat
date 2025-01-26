@@ -13,7 +13,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] float steerStrength = 2.0f;
 
     [SerializeField] Rigidbody2D coreBone;
-    [SerializeField] Transform pivot;
+    [SerializeField] public Transform pivot;
 
     private Joint[] _joints;
     private readonly Vector2[][] _connectedAnchor;
@@ -60,8 +60,6 @@ public class Bubble : MonoBehaviour
         float targetVelocity = bubble.transform.localScale.x * riseVelocity;
         float velocityDelta = targetVelocity - coreBone.velocity.y;
         AddForceToJoints(riseStrength * velocityDelta * Vector2.up);
-
-        Debug.Log("Target: " + targetVelocity + " --- Current: " + coreBone.velocity.y);
 
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         AddForceToJoints(steerStrength * horizontalMove * Vector2.right);
