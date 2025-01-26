@@ -7,7 +7,14 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Level Failed!");
-        LevelFailed?.Invoke();
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Level Failed!");
+            LevelFailed?.Invoke();
+        }
+    }
+
+    public void StopMonster() {
+        gameObject.GetComponent<MoveInDirection>().enabled = false;
     }
 }

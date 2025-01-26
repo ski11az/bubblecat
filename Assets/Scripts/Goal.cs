@@ -5,6 +5,7 @@ public class Goal : MonoBehaviour
 {
     [SerializeField] GameStopwatch stopwatch;
 
+    [SerializeField] GameObject winPanel;
     public UnityEvent LevelStarted;
     public UnityEvent LevelCompleted;
 
@@ -16,6 +17,7 @@ public class Goal : MonoBehaviour
         {
             hasStarted = true;
             LevelStarted?.Invoke();
+            
         }
     }
 
@@ -26,5 +28,13 @@ public class Goal : MonoBehaviour
             Debug.Log("Level Completed");
             LevelCompleted?.Invoke();
         }
+    }
+
+    public void PlayWinAudio()
+    {
+        winPanel.SetActive(true);
+        AudioManager.Instance.PlaySound(
+            AudioManager.Instance.musicSource,
+            AudioManager.Instance.winSource);
     }
 }

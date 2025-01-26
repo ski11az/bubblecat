@@ -20,7 +20,7 @@ public class GameStopwatch : MonoBehaviour
 
     public void StartStopwatch()
     {
-        _stopwatchText.text = ""; // Reset stopwatch text
+        _stopwatchText.text = "hej"; // Reset stopwatch text
         _timer.Start();
     }
 

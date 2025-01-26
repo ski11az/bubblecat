@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class LosingScript : MonoBehaviour
 {
-    [SerializeField] Canvas loseCanvas;
+    [SerializeField] GameObject loseCanvas;
 
-    private CalculateDistance _calcDistance;
-
-    // Start is called before the first frame update
-    void Start()
+    public void EnableLosingScreen()
     {
-        _calcDistance = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CalculateDistance>();
+        loseCanvas.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisableLosingScreen()
     {
-        if(_calcDistance.GetDistance() == 0)
-        {
-            loseCanvas.enabled = true;
-        }
+        loseCanvas.SetActive(false);
     }
 }
