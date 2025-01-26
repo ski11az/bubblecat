@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4ad47febc9c0e5e4d815d00732758173
+guid: b4812641c277b2f4193cc76db438839e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,64 +97,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tratten funnel_0
+      name: tunnel_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2171
+        y: 2311
         width: 3250
-        height: 3661
+        height: 3521
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 27, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3069b67ca3d9574f972f81b911e7da3
-      internalID: 761803872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tratten funnel_1
-      rect:
-        serializedVersion: 2
-        x: 3064
-        y: 939
-        width: 184
-        height: 253
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c3bed06efe2614793613233c5cc99e
-      internalID: -1304049517
+      spriteID: dfa7d5ad60c3c3040a6aa756b3ee2c5c
+      internalID: 831913452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tratten funnel_2
+      name: tunnel_1
       rect:
         serializedVersion: 2
-        x: 3236
+        x: 3062
+        y: 939
+        width: 186
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4b4206d35be9e4eb1577f320c2b09b
+      internalID: -27891354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tunnel_2
+      rect:
+        serializedVersion: 2
+        x: 3234
         y: 1142
-        width: 14
+        width: 16
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae17221252debf4c95b1a1252532910
-      internalID: -1751909869
+      spriteID: fe718af7bce3f8446ad8f8e057bba730
+      internalID: 1173072227
       vertices: []
       indices: 
       edges: []
@@ -163,16 +163,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tratten funnel_0: 761803872
-      Tratten funnel_1: -1304049517
-      Tratten funnel_2: -1751909869
+      tunnel_0: 831913452
+      tunnel_1: -27891354
+      tunnel_2: 1173072227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
