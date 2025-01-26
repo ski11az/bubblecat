@@ -19,6 +19,8 @@ public class SittingCat : MonoBehaviour
     private void OnEnable()
     {
         cinemachine.Follow = transform;
+        int random = Random.Range(0, AudioManager.Instance.meowShort.Length);
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.meowShort[random], 1);
     }
 
     private void OnDisable()

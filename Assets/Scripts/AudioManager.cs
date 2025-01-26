@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [Header("Sources")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioSource sfxSource2;
 
     [Header("Sources")]
     public AudioClip blow;
@@ -28,19 +29,12 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            musicSource.Play();
-        }
-        else if (Input.GetKeyDown(KeyCode.O))
-        {
-            musicSource.Pause();
-        }
+
     }
 
-    public void PlayOneShot(AudioSource source, AudioClip clip)
+    public void PlayOneShot(AudioSource source, AudioClip clip, float volume)
     {
-        source.PlayOneShot(clip);
+        source.PlayOneShot(clip, volume);
     }
 
     public void PlaySound(AudioSource source, AudioClip clip)

@@ -13,9 +13,10 @@ public class BubbleCollision : MonoBehaviour
     public UnityEvent BubblePopped;
 
     DangleCat dangleCat;
-
+    AudioManager audioManager;
     private void Start()
     {
+        audioManager = AudioManager.Instance;
         dangleCat = FindObjectOfType<DangleCat>();
     }
 
@@ -25,6 +26,9 @@ public class BubbleCollision : MonoBehaviour
     }
 
     void PopBubble() {
+        int random = Random.Range(0, audioManager.pop.Length);
+        audioManager.PlaySound(audioManager.sfxSource, audioManager.pop[random]);
+        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.meowFall[0],1);
         popAnimation = Instantiate(pop, this.transform.position, Quaternion.identity);
         popAnimation.transform.localScale = bubble.transform.localScale;
         BubblePopped.Invoke();
