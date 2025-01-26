@@ -16,9 +16,9 @@ public class DistanceGradient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float _distance = gameObject.GetComponent<CalculateDistance>().GetDistance();
+        float _distance = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CalculateDistance>().GetDistance();
 
-        if(_distance != -1)
+        if (_distance != -1)
         {
             for (int i = 0; i < _spriteRenderers.Length; i++)
             {
