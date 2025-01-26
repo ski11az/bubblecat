@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1282068492429440996}
   - component: {fileID: 1896485534919366961}
   - component: {fileID: 383953655532336749}
-  - component: {fileID: 3847576719656732681}
   - component: {fileID: 1760046508975769260}
   m_Layer: 0
   m_Name: Poker
@@ -102,42 +101,6 @@ MonoBehaviour:
     m_PostInfinity: 0
     m_RotationOrder: 4
   speed: 1
---- !u!114 &3847576719656732681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622993229008660127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88cc31a6a8eca9949af3bace5e070df0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.09188802
-      value: 0.12924525
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.8173551
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
 --- !u!60 &1760046508975769260
 PolygonCollider2D:
   m_ObjectHideFlags: 0
