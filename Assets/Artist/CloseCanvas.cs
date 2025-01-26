@@ -11,6 +11,7 @@ public class CloseCanvas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             HideCanvas();
+
         }
     }
 
@@ -25,4 +26,6 @@ public class CloseCanvas : MonoBehaviour
             Debug.LogWarning("No canvas assigned to CloseCanvasOnSpace script!");
         }
     }
+
+
 }
