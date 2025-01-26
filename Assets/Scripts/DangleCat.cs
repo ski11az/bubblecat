@@ -24,6 +24,7 @@ public class DangleCat : MonoBehaviour
         hinge.connectedBody = bubble.pivot.GetComponent<Rigidbody2D>();
 
         cinemachine.Follow = transform;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CalculateDistance>().SetTarget(2, this.gameObject);
     }
 
     private void OnDisable()
