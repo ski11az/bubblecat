@@ -27,6 +27,8 @@ public class CalculateDistance : MonoBehaviour
             _distance = GetDistance();
             Debug.Log(_distance);
         }
+
+        AudioManager.Instance.monsterSource.volume = (1 - _distance) - 0.5f;
     }
 
     public float GetDistance() { // Returns distance as a value between 0-1
