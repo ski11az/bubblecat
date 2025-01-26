@@ -856,6 +856,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1282068492429440996, guid: 80636d6fc1363464fb192caa04bcb09b, type: 3}
   m_PrefabInstance: {fileID: 506225331}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &546290324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 868608101163334273, guid: bb6036943f839a44094816f25749d49b, type: 3}
+  m_PrefabInstance: {fileID: 1345745667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &557187046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2836,6 +2841,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 8607804647308657894, guid: bb6036943f839a44094816f25749d49b, type: 3}
+      propertyPath: loseCanvas
+      value: 
+      objectReference: {fileID: 546290324}
     - target: {fileID: 9053878375723621599, guid: bb6036943f839a44094816f25749d49b, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 1
