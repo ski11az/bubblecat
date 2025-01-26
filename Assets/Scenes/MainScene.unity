@@ -1484,7 +1484,7 @@ PrefabInstance:
     - target: {fileID: 2523034897255282796, guid: 01298894110e2cf4c8d3c73abdf42f53, type: 3}
       propertyPath: LevelFailed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1345745668}
+      objectReference: {fileID: 0}
     - target: {fileID: 2523034897255282796, guid: 01298894110e2cf4c8d3c73abdf42f53, type: 3}
       propertyPath: LevelFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2889,7 +2889,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: bb6036943f839a44094816f25749d49b, type: 3}
 --- !u!114 &1345745668 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8063509252223626462, guid: bb6036943f839a44094816f25749d49b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8607804647308657894, guid: bb6036943f839a44094816f25749d49b, type: 3}
   m_PrefabInstance: {fileID: 1345745667}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83990755}
