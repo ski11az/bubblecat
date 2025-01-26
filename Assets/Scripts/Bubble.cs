@@ -18,9 +18,12 @@ public class Bubble : MonoBehaviour
     private Joint[] _joints;
     private readonly Vector2[][] _connectedAnchor;
     private readonly Vector2[][] _anchor;
-
+    private AudioManager audioManager;
+    private bool playingBlowSound;
     private void Start()
     {
+
+        audioManager = AudioManager.Instance;
         // Get and store connectedAnchors and anchors
         for (int i = 0; i < bubble_bones.Length; i++)
         {
@@ -41,7 +44,13 @@ public class Bubble : MonoBehaviour
         {
             IncreaseBubbleSize();
         }
-
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            playingBlowSound = false;
+            int random = Random.Range(0, audioManager.breathe.Length);
+            Invoke("StopBlowSound", 0.1f);
+            audioManager.PlayOneShot(audioManager.sfxSource, audioManager.breathe[random], 0.1f);
+        }
         for (int i = 0; i < bubble_bones.Length; i++)
         {
             // Reset the joints
@@ -54,7 +63,10 @@ public class Bubble : MonoBehaviour
             }
         }
     }
-
+    void StopBlowSound()
+    {
+        audioManager.sfxSource2.Stop();
+    }
     void FixedUpdate()
     {
         float targetVelocity = bubble.transform.localScale.x * riseVelocity;
@@ -66,6 +78,12 @@ public class Bubble : MonoBehaviour
     }
 
     void IncreaseBubbleSize() {
+        if (!playingBlowSound)
+        {
+            playingBlowSound = true;
+            audioManager.PlaySound(audioManager.sfxSource2, audioManager.blow);
+        }
+       
         Vector3 newScale = bubble.transform.localScale + Time.deltaTime * new Vector3(scaleChange, scaleChange, scaleChange);
 
         if (newScale.x < maxScale)

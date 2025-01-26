@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4704001925392806406}
   - component: {fileID: 4786325133485252697}
   - component: {fileID: 2038658466191881728}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CatSitting
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangleCat: {fileID: 0}
+  cinemachine: {fileID: 0}
 --- !u!1 &3786406015894828665
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8636423219814326374}
   - component: {fileID: 8506989226460215015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cat_Sitting
   m_TagString: Untagged
   m_Icon: {fileID: 0}

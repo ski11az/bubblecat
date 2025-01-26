@@ -21,9 +21,10 @@ public class TextPopAnimation : MonoBehaviour
     public float waveFrequency = 10f;           // Speed of sine wave effect
     public float waveAmplitude = 3f;            // Amplitude of sine wave distortion
     public float delayBeforeSecondText = 1.0f;  // Delay before showing second text
-
+    AudioManager audioManager;
     private void Start()
     {
+        audioManager = AudioManager.Instance;
         // Ensure horror texts start fully transparent (alpha = 0)
         Color initialColor = horrorTextElement.color;
         horrorTextElement.color = new Color(initialColor.r, initialColor.g, initialColor.b, 0);
@@ -53,7 +54,8 @@ public class TextPopAnimation : MonoBehaviour
         foreach (TextMeshProUGUI text in textElements)
         {
             text.gameObject.SetActive(true);  // Ensure the text is visible
-
+            int random = Random.Range(0, audioManager.pop.Length);
+            audioManager.PlayOneShot(audioManager.sfxSource, audioManager.pop[random], 1);
             // Start with no scale
             text.transform.localScale = Vector3.zero;
 
@@ -76,7 +78,7 @@ public class TextPopAnimation : MonoBehaviour
                 if (applyDistortion)
                     StartCoroutine(ApplyTextDistortion(textElement));
             });
-
+        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.horror[0], 1);
         yield return new WaitForSeconds(fadeDuration);
     }
 

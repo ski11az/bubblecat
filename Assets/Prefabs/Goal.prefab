@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3319124370876025524}
   - component: {fileID: 6583975358073698981}
   - component: {fileID: 558608452825436726}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: be340a165cb9c8d4cb50f1deeb51d4ea, type: 3}
@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8674c1f9fe464d4d98dc3d749e5da9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopwatch: {fileID: 0}
+  LevelStarted:
+    m_PersistentCalls:
+      m_Calls: []
   LevelCompleted:
     m_PersistentCalls:
       m_Calls: []
