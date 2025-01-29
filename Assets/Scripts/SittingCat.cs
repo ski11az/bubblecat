@@ -7,15 +7,18 @@ public class SittingCat : MonoBehaviour
 {
     [SerializeField] GameObject dangleCat;
     [SerializeField] CinemachineVirtualCamera cinemachine;
+    [SerializeField] GameObject GameStateManager;
+
+    private GameStateManager gsm;
 
     private void Start()
     {
-        
+        gsm = GameStateManager.GetComponent<GameStateManager>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && gsm.IsIntroFinished())
         {
             gameObject.SetActive(false);
         }

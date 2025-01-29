@@ -4,16 +4,24 @@ using UnityEngine.Events;
 public class Goal : MonoBehaviour
 {
     [SerializeField] GameStopwatch stopwatch;
-
+    [SerializeField] GameObject GameStateManager;
     [SerializeField] GameObject winPanel;
+
     public UnityEvent LevelStarted;
     public UnityEvent LevelCompleted;
 
     bool hasStarted = false;
 
+    private GameStateManager gsm;
+
+    private void Start()
+    {
+        gsm = GameStateManager.GetComponent<GameStateManager>();
+    }
+
     private void Update()
     {
-        if (!hasStarted && Input.GetKeyDown(KeyCode.Space))
+        if (!hasStarted && Input.GetKeyDown(KeyCode.Space) && gsm.IsIntroFinished())
         {
             hasStarted = true;
             LevelStarted?.Invoke();

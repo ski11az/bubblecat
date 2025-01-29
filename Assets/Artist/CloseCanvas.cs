@@ -5,11 +5,21 @@ using UnityEngine;
 public class CloseCanvas : MonoBehaviour
 {
     [SerializeField] GameStopwatch timer;
+    [SerializeField] GameObject GameStateManager;
+
     public Canvas targetCanvas;  // Assign the UI Canvas in the Inspector
     public MoveInDirection moveInDirection;
+
+    private GameStateManager gsm;
+
+    private void Start()
+    {
+        gsm = GameStateManager.GetComponent<GameStateManager>();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && targetCanvas.enabled)
+        if (Input.GetKeyDown(KeyCode.Space) && targetCanvas.enabled && gsm.IsIntroFinished())
         {
             HideCanvas();
             AudioManager.Instance.musicSource.Play();

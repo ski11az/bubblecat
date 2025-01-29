@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class TextPopAnimation : MonoBehaviour
 {
+    [SerializeField] GameObject GameStateManager;
+
     [Header("Cute Pop Effect")]
     public List<TextMeshProUGUI> textElements;  // Assign TMP elements in Inspector
     public float popDuration = 0.3f;            // How long the pop effect lasts
@@ -86,6 +88,9 @@ public class TextPopAnimation : MonoBehaviour
     {
         secondHorrorTextElement.DOFade(1f, fadeDuration)
             .SetEase(Ease.InOutQuad);
+
+        // Enable game start after animation finishes
+        GameStateManager.GetComponent<GameStateManager>().SetIntroFinishedTrue();
     }
 
     IEnumerator ApplyTextDistortion(TextMeshProUGUI textElement)

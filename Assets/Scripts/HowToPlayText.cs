@@ -5,23 +5,14 @@ using TMPro;
 
 public class HowToPlayText : MonoBehaviour
 {
-    [SerializeField] GameObject howToPlay;
+    [SerializeField] GameObject howToPlayPanel;
+    [SerializeField] TMP_Text howToPlayText;
     [SerializeField] float textFadeOutSeconds;
-
-    private TMP_Text[] _texts;
-
-    private void Start()
-    {
-        _texts = howToPlay.GetComponentsInChildren<TMP_Text>();
-    }
 
     public void ShowText()
     {
-        foreach(TMP_Text text in _texts)
-        {
-            howToPlay.SetActive(true);
-            StartCoroutine(FadeTextToZeroAlpha(textFadeOutSeconds, text));
-        }
+        howToPlayPanel.SetActive(true);
+        StartCoroutine(FadeTextToZeroAlpha(textFadeOutSeconds, howToPlayText));
     }
     
     public IEnumerator FadeTextToZeroAlpha(float time, TMP_Text text)
@@ -31,6 +22,9 @@ public class HowToPlayText : MonoBehaviour
         {
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime / time));
             yield return null;
+            Debug.Log(text.color.a);
         }
+        Debug.Log("Finished coroutine");
+        howToPlayPanel.SetActive(false);
     }
 }
