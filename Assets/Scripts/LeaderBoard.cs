@@ -15,7 +15,7 @@ public class LeaderBoard : MonoBehaviour
     [SerializeField] private GameObject[] closeIfSuccessful;
     [SerializeField] private GameObject[] openIfSuccessful;
     [SerializeField] private GameObject[] openIfFailed;
-    public Ldrboard ldrboard;
+    
     private string publicLeaderboardKey = "d81ecffd5cc493514f490d4589d416d84cf08787629105574383a22ee12ca6d7";
     // Start is called before the first frame update
 
