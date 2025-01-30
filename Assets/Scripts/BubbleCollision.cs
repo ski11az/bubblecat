@@ -25,7 +25,7 @@ public class BubbleCollision : MonoBehaviour
         PopBubble();
     }
 
-    void PopBubble() {
+    public void PopBubble() {
         Debug.Log("Bubble popped");
         int random = Random.Range(0, audioManager.pop.Length);
         audioManager.PlaySound(audioManager.sfxSource, audioManager.pop[random]);

@@ -39,6 +39,7 @@ public class Bubble : MonoBehaviour
 
     private void Update()
     {
+       
 
         if (Input.GetKey(KeyCode.Space))
         {
@@ -90,6 +91,11 @@ public class Bubble : MonoBehaviour
         {
             SetBubbleScale(newScale);
             coreBone.GetComponent<CircleCollider2D>().radius += Time.deltaTime * scaleChange;
+        }
+        else
+        {
+            playingBlowSound = false;
+            GetComponentInChildren<BubbleCollision>().PopBubble();
         }
     }
 

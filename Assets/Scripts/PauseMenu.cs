@@ -18,31 +18,37 @@ public class PauseMenu : MonoBehaviour
     private Vector3 buttonOriginalSize;
     private AudioManager audioManager;
 
+    public bool isPause;
     public GameObject[] menusToCloseOnExit;
     public GameObject menuObject;
     void Awake()
     {
         audioManager = AudioManager.Instance;
+        if(isPause)
         originalSize = pauseMenuWindow.sizeDelta;
     }
     private void OnEnable()
     {
-        AudioManager.Instance.musicSource.Pause();
-        AudioManager.Instance.monsterSource.Pause();
-        foreach (GameObject menu in menusToCloseOnExit)
+        if (isPause)
         {
-            menu.SetActive(false);
-        }
-        menuObject.SetActive(true);
-        Debug.Log("Pause Menu Enabled");
-        // Reset the pause menu size to zero and alpha to 0
-        pauseMenuWindow.sizeDelta = Vector2.zero;
+            AudioManager.Instance.musicSource.Pause();
+            AudioManager.Instance.monsterSource.Pause();
+            foreach (GameObject menu in menusToCloseOnExit)
+            {
+                menu.SetActive(false);
+            }
+            menuObject.SetActive(true);
+            Debug.Log("Pause Menu Enabled");
+            // Reset the pause menu size to zero and alpha to 0
+            pauseMenuWindow.sizeDelta = Vector2.zero;
 
-        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.meowShort[5], 0.5f);
-        // Animate the pause menu to its original size and fade in
-        pauseMenuWindow.DOSizeDelta(originalSize, animationDuration)
-                       .SetEase(easeType).SetUpdate(true);
-        Time.timeScale = 0;
+            audioManager.PlayOneShot(audioManager.sfxSource, audioManager.meowShort[5], 0.5f);
+            // Animate the pause menu to its original size and fade in
+            pauseMenuWindow.DOSizeDelta(originalSize, animationDuration)
+                           .SetEase(easeType).SetUpdate(true);
+            Time.timeScale = 0;
+        }
+
     }
     public void CloseMenu()
     {

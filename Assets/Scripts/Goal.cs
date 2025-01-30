@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,7 +7,7 @@ public class Goal : MonoBehaviour
     [SerializeField] GameStopwatch stopwatch;
     [SerializeField] GameObject GameStateManager;
     [SerializeField] GameObject winPanel;
-
+    [SerializeField] CinemachineVirtualCamera cam;
     public UnityEvent LevelStarted;
     public UnityEvent LevelCompleted;
 
@@ -33,6 +34,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            cam.enabled = false;
             Debug.Log("Level Completed");
             LevelCompleted?.Invoke();
         }
