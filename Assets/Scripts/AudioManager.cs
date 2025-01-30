@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource2;
     public AudioSource ambience;
     public AudioSource monsterSource;
+    public AudioSource musicExample;
     [Header("Clips")]
     public AudioClip blow;
     public AudioClip[] meowFall;
@@ -27,7 +28,7 @@ public class AudioManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Instance = this;
     }

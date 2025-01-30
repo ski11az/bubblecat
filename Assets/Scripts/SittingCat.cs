@@ -38,7 +38,11 @@ public class SittingCat : MonoBehaviour
 
     private void OnDisable()
     {
-        dangleCat.transform.position = transform.position;
-        dangleCat.SetActive(true);
+        if (dangleCat != null)
+        {
+            dangleCat.transform.position = transform.position;
+            dangleCat.SetActive(true);
+        }
+
     }
 }

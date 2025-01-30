@@ -9,13 +9,17 @@ public class DangleCat : MonoBehaviour
     [SerializeField] HingeJoint2D hinge;
     [SerializeField] PlayerTransformFollow follow;
     [SerializeField] CircleCollider2D col;
-
+   
     [SerializeField] GameObject sittingCat;
     [SerializeField] CinemachineVirtualCamera cinemachine;
-
+    private Vector3 startRotation;
+    private void Start()
+    {
+        startRotation = new Vector3(transform.rotation.x,transform.rotation.y,transform.rotation.z);
+    }
     private void OnEnable()
     {
-
+        transform.eulerAngles = new Vector3(startRotation.x, startRotation.y, startRotation.z);
         Bubble bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
 
         follow.enabled = true;
@@ -30,9 +34,13 @@ public class DangleCat : MonoBehaviour
 
     private void OnDisable()
     {
+        if (sittingCat != null)
+        {
+            sittingCat.transform.position = transform.position;
 
-        sittingCat.transform.position = transform.position;
-        sittingCat.SetActive(true);
+            sittingCat.SetActive(true);
+        }
+           
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

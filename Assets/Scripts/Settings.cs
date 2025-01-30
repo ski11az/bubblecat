@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
+
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -27,60 +27,72 @@ public class Settings : MonoBehaviour
 
 
     private AudioManager audioManager;
-
+    public IEnumerator stopSound;
     private float animationDuration = 0.5f;
 
     private Vector2 originalSize;
-    private Vector2 mainSize;
-
+    [SerializeField]private Vector2 mainSize;
+    public bool isControls;
     void Awake()
     {
+
         mainSize = new Vector2(25,25);
         originalSize = _transform.localScale;
-        audioManager = AudioManager.Instance;
-        fullscreenTog.isOn = Screen.fullScreen;
+        
+        if (!isControls)
+        {
+            fullscreenTog.isOn = Screen.fullScreen;
 
-        if (QualitySettings.vSyncCount == 0)
-        {
-            vsyncTog.isOn = false;
+            if (QualitySettings.vSyncCount == 0)
+            {
+                vsyncTog.isOn = false;
+            }
+            else
+            {
+                vsyncTog.isOn = true;
+            }
         }
-        else
-        {
-            vsyncTog.isOn=true;
-        }
+   
 
 
     }
 
-
+    private void Start()
+    {
+        
+    }
     private void OnEnable()
     {
         pauseMenu.OnObjectEnabled();
         _cGMain.blocksRaycasts = false;
         _cG.alpha = 1;
         _transform.localScale = mainSize;
-        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.horror[1], 0.5f);
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.horror[1], 0.5f);
         _cG.DOFade(0, animationDuration).SetEase(Ease.InOutQuad);
         _transform.DOScale(originalSize, animationDuration)
                        .SetEase(Ease.InBack).SetUpdate(true).OnComplete(() =>
                        {
                            _cGMain.blocksRaycasts = true;
-                           audioManager.PlayOneShot(audioManager.sfxSource, audioManager.hit[1], 4);
+                           AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.hit[1], 4);
                        }); ;
 
     }
     public void CloseSettings()
     {
-        _cGMain.blocksRaycasts = false;
-        pauseMenu.OnObjectEnabled();
-        audioManager.PlayOneShot(audioManager.sfxSource, audioManager.squeak[1], 0.2f);
-        _cG.DOFade(1, animationDuration).SetEase(Ease.InOutQuad);
-        _transform.DOScale(mainSize, animationDuration)
-                       .SetEase(Ease.OutBack).SetUpdate(true).OnComplete(() =>
-                       {
-                           _cGMain.blocksRaycasts = true;
-                           gameObject.SetActive(false);
-                       }); ;
+        if (gameObject.activeInHierarchy)
+        {
+            _cGMain.blocksRaycasts = false;
+            pauseMenu.OnObjectEnabled();
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.squeak[1], 0.2f);
+            _cG.DOFade(1, animationDuration).SetEase(Ease.InOutQuad);
+            _transform.DOScale(mainSize, animationDuration)
+                           .SetEase(Ease.OutBack).SetUpdate(true).OnComplete(() =>
+                           {
+                               _cGMain.blocksRaycasts = true;
+                               gameObject.SetActive(false);
+                           }); ;
+        }
+
     }
     public void ChangeMasterVolume()
     {
@@ -96,6 +108,26 @@ public class Settings : MonoBehaviour
     {
         _audio.SetFloat("VolumeSFX", sfxSlider.value);
     }
+    public void PlayExample(bool music)
+    {
+        if (!music)
+        {
+            AudioManager.Instance.musicExample.Play();
+            StartCoroutine(StopSoundAfterDelay(2)); 
+        }
+        else
+        {
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.meowShort[1], 1);
+        }
+    }
+
+    private IEnumerator StopSoundAfterDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        AudioManager.Instance.musicExample.Stop();
+    }
+
+ 
     public void ApplySettings()
     {
         Screen.fullScreen = fullscreenTog.isOn;

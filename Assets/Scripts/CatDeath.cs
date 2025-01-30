@@ -11,6 +11,7 @@ public class CatDeath : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.meowLong[0], 1);
             CatDied.Invoke();
         }
     }

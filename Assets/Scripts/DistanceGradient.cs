@@ -7,7 +7,7 @@ public class DistanceGradient : MonoBehaviour
     [SerializeField] GameObject bg;
 
     private SpriteRenderer[] _spriteRenderers;
-
+    [SerializeField] CalculateDistance distanceScript;
     private void Start()
     {
         _spriteRenderers = bg.GetComponentsInChildren<SpriteRenderer>();
@@ -16,7 +16,7 @@ public class DistanceGradient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float _distance = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CalculateDistance>().GetDistance();
+        float _distance = distanceScript.GetDistance();
 
         if (_distance != -1)
         {

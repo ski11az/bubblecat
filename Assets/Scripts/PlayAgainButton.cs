@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class PlayAgainButton : MonoBehaviour
 {
     [SerializeField] float scale = 0.15f;
     [SerializeField] Button btn;
-
     private Vector3 _originalScale;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(btn != null)
         _originalScale = btn.transform.localScale;
     }
 
@@ -20,7 +20,7 @@ public class PlayAgainButton : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    
     public void OnPointerEnter()
     {
         AudioManager.Instance.PlayOneShot(
