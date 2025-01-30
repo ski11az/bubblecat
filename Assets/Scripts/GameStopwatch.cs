@@ -33,18 +33,21 @@ public class GameStopwatch : MonoBehaviour
         _timer.Reset();
      
     }
-    public int TimeToSeconds(int hours, int minutes, int seconds)
+    public int TimeToMilliseconds(int minutes, int seconds, int milliseconds)
     {
-        return (hours * 3600) + (minutes * 60) + seconds;
+        return (minutes * 60000) + (seconds * 1000) + milliseconds;
     }
-    public int CalculateHiddenScore(int hours, int minutes, int seconds)
+
+    public int CalculateHiddenScore(int minutes, int seconds, int milliseconds)
     {
-        int maxTimeInSeconds = TimeToSeconds(100, 100, 100); // Worst time
-        int playerTimeInSeconds = TimeToSeconds(hours, minutes, seconds); // Player's time
+        int maxTimeInMilliseconds = TimeToMilliseconds(10, 0, 0); // Worst case: 10 minutes
+        int playerTimeInMilliseconds = TimeToMilliseconds(minutes, seconds, milliseconds);
 
-        // Score = Max Time - Player's Time
-        int score = maxTimeInSeconds - playerTimeInSeconds;
+        // Flip the scoring: Faster time = higher score
+        int maxScore = 1_000_000; // Set an arbitrary max score for best performance
+        int score = maxScore - playerTimeInMilliseconds;
 
-        return score;
+        return Mathf.Max(0, score); // Prevent negative scores
+
     }
 }
