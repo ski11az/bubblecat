@@ -15,6 +15,7 @@ public class DangleCat : MonoBehaviour
 
     private void OnEnable()
     {
+
         Bubble bubble = Instantiate(bubblePrefab, transform.position, Quaternion.identity);
 
         follow.enabled = true;
@@ -29,6 +30,7 @@ public class DangleCat : MonoBehaviour
 
     private void OnDisable()
     {
+
         sittingCat.transform.position = transform.position;
         sittingCat.SetActive(true);
     }

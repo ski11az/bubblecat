@@ -11,9 +11,15 @@ public class TextDistortion : MonoBehaviour
     public float distortionDuration = 0.1f;
 
     private Tween distortionTween;
-
+    
+    private Tween fadeTween;
+    public float fadeInDuration;
     private void OnEnable()
     {
+        if (fadeInDuration > 0)
+        {
+            FadeInText();
+        }
         ApplyTextDistortion();
     }
 
@@ -26,7 +32,7 @@ public class TextDistortion : MonoBehaviour
     {
         distortionTween = DOTween.To(() => 0f, x => DistortText(), 1f, distortionDuration)
             .SetLoops(-1, LoopType.Restart)
-            .SetEase(Ease.Linear);
+            .SetEase(Ease.Linear).SetUpdate(true);
     }
 
     private void DistortText()
@@ -54,4 +60,13 @@ public class TextDistortion : MonoBehaviour
 
         textElement.UpdateVertexData(TMP_VertexDataUpdateFlags.Vertices);
     }
+    public void FadeInText()
+    {
+       
+        textElement.alpha = 0;
+
+        fadeTween = textElement.DOFade(1, fadeInDuration)
+            .SetEase(Ease.InOutQuad)
+            .SetUpdate(true); 
+     }
 }
