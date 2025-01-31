@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Monster
   - Bone
+  - Cave
   layers:
   - Default
   - TransparentFX

@@ -25,10 +25,7 @@ public class Settings : MonoBehaviour
     public CanvasGroup _cGMain;
     public PauseMenu pauseMenu;
 
-    public Toggle transparentToggle;
-    public Bubble regularBubble;
-    public Bubble transparentBubble;
-    public DangleCat cat;
+
 
     private AudioManager audioManager;
     public IEnumerator stopSound;
@@ -77,13 +74,7 @@ public class Settings : MonoBehaviour
                        }); ;
 
     }
-    public void ToggleTransparentBubble()
-    {
-        if (transparentToggle.isOn)
-            cat.bubblePrefab = transparentBubble;
-        else
-            cat.bubblePrefab = regularBubble;
-    }
+
     public void CloseSettings()
     {
         if (gameObject.activeInHierarchy)

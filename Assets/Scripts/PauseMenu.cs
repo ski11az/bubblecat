@@ -105,7 +105,7 @@ public class PauseMenu : MonoBehaviour
                 // Immediately reset the button's scale to its original size
                 button.localScale = buttonOriginalSize;
                 int random = Random.Range(0, audioManager.pop.Length);
-                audioManager.PlayOneShot(audioManager.sfxSource, audioManager.pop[random], 0.5f);
+                audioManager.PlayOneShot(audioManager.sfxSource, audioManager.pop[random], 0.2f);
                 button.DOScale(buttonOriginalSize * 1.2f, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
 
             }

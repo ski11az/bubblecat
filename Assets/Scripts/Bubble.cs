@@ -11,10 +11,10 @@ public class Bubble : MonoBehaviour
     [SerializeField] float riseStrength = 1.5f;
     [SerializeField] float riseVelocity = 10.0f;
     [SerializeField] float steerStrength = 2.0f;
-
+    [SerializeField] Transform particles;
     [SerializeField] Rigidbody2D coreBone;
     [SerializeField] public Transform pivot;
-
+    public bool canRise;
     private Joint[] _joints;
     private readonly Vector2[][] _connectedAnchor;
     private readonly Vector2[][] _anchor;
@@ -22,7 +22,7 @@ public class Bubble : MonoBehaviour
     private bool playingBlowSound;
     private void Start()
     {
-
+        canRise = true;
         audioManager = AudioManager.Instance;
         // Get and store connectedAnchors and anchors
         for (int i = 0; i < bubble_bones.Length; i++)
@@ -41,11 +41,11 @@ public class Bubble : MonoBehaviour
     {
        
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space ) && canRise)
         {
             IncreaseBubbleSize();
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) )
         {
             playingBlowSound = false;
             int random = Random.Range(0, audioManager.breathe.Length);
@@ -63,6 +63,10 @@ public class Bubble : MonoBehaviour
                 _joints[j].anchor = _anchor[i][j];
             }
         }
+        if (particles != null)
+        {
+            particles.position = coreBone.transform.position;
+        }
     }
     void StopBlowSound()
     {
@@ -71,12 +75,16 @@ public class Bubble : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float targetVelocity = bubble.transform.localScale.x * riseVelocity;
-        float velocityDelta = targetVelocity - coreBone.velocity.y;
-        AddForceToJoints(riseStrength * velocityDelta * Vector2.up);
+        if (canRise)
+        {
+            float targetVelocity = bubble.transform.localScale.x * riseVelocity;
+            float velocityDelta = targetVelocity - coreBone.velocity.y;
+            AddForceToJoints(riseStrength * velocityDelta * Vector2.up);
 
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
-        AddForceToJoints(steerStrength * horizontalMove * Vector2.right);
+            float horizontalMove = Input.GetAxisRaw("Horizontal");
+            AddForceToJoints(steerStrength * horizontalMove * Vector2.right);
+        }
+
     }
 
     void IncreaseBubbleSize() {
@@ -120,7 +128,7 @@ public class Bubble : MonoBehaviour
         }
     }
 
-    void AddForceToJoints(Vector2 force)
+    public void AddForceToJoints(Vector2 force)
     {
         for (int i = 0; i < bubble_bones.Length; i++)
         {
