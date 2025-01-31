@@ -25,6 +25,10 @@ public class Settings : MonoBehaviour
     public CanvasGroup _cGMain;
     public PauseMenu pauseMenu;
 
+    public Toggle transparentToggle;
+    public Bubble regularBubble;
+    public Bubble transparentBubble;
+    public DangleCat cat;
 
     private AudioManager audioManager;
     public IEnumerator stopSound;
@@ -57,10 +61,6 @@ public class Settings : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        
-    }
     private void OnEnable()
     {
         pauseMenu.OnObjectEnabled();
@@ -76,6 +76,13 @@ public class Settings : MonoBehaviour
                            AudioManager.Instance.PlayOneShot(AudioManager.Instance.sfxSource, AudioManager.Instance.hit[1], 4);
                        }); ;
 
+    }
+    public void ToggleTransparentBubble()
+    {
+        if (transparentToggle.isOn)
+            cat.bubblePrefab = transparentBubble;
+        else
+            cat.bubblePrefab = regularBubble;
     }
     public void CloseSettings()
     {

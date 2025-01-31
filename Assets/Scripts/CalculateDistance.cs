@@ -5,7 +5,7 @@ using UnityEngine;
 public class CalculateDistance : MonoBehaviour
 {
     [SerializeField] GameObject point1_gameobject;
-    [SerializeField] GameObject point2_gameobject;
+    [SerializeField] public GameObject point2_gameobject;
     [SerializeField] float baseDistance; // Ideal distance when "distance"-value should be 1 (no effects applied)
 
     private float _distance;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DangleCat : MonoBehaviour
 {
-    [SerializeField] Bubble bubblePrefab;
+    [SerializeField] public Bubble bubblePrefab;
     [SerializeField] HingeJoint2D hinge;
     [SerializeField] PlayerTransformFollow follow;
     [SerializeField] CircleCollider2D col;

@@ -67,6 +67,7 @@ public class Bubble : MonoBehaviour
     void StopBlowSound()
     {
         audioManager.sfxSource2.Stop();
+        playingBlowSound = false;
     }
     void FixedUpdate()
     {
@@ -94,7 +95,7 @@ public class Bubble : MonoBehaviour
         }
         else
         {
-            playingBlowSound = false;
+            StopBlowSound();
             GetComponentInChildren<BubbleCollision>().PopBubble();
         }
     }
